@@ -1,0 +1,111 @@
+/* จัดกลางหน้าจอทั้งแนวตั้งและแนวนอน */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #9face6);
+    margin: 0;
+    height: 100vh;
+}
+
+.app-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* กล่องหลัก */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* ชื่อแอป */
+.title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* dropdown */
+select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    text-align-last: center;
+}
+
+select:hover {
+    border-color: #6c63ff;
+}
+
+/* วันนี้ */
+.current-weather {
+    margin-top: 20px;
+    background: #f7f9ff;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.temp {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* พยากรณ์ */
+.forecast {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.card {
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ลูกเล่น fade */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* พื้นหลังตามเมือง */
+.current-weather.bangkok {
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+}
+
+.current-weather.newyork {
+    background: linear-gradient(135deg, #cfd9df, #e2ebf0);
+}
+
+.current-weather.tokyo {
+    background: linear-gradient(135deg, #fddb92, #d1fdff);
+}
+
+.current-weather.london {
+    background: linear-gradient(135deg, #d7d2cc, #304352);
+    color: white;
+}
